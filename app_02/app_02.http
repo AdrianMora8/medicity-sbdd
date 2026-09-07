@@ -1,0 +1,68 @@
+@app_02_HostAddress = http://localhost:5086
+
+### Vista general distribuida (citas, pacientes, doctores, diagnóstico)
+GET {{app_02_HostAddress}}/api/medicity/distribuida/view
+Accept: application/json
+
+###
+
+### Vista de doctores (Sitio B + Sitio A)
+GET {{app_02_HostAddress}}/api/medicity/distribuida/doctores
+Accept: application/json
+
+###
+
+### Crear doctor (SP: sp_InsertarDoctor)
+POST {{app_02_HostAddress}}/api/medicity/distribuida/sp_doctor
+Content-Type: application/json
+
+{
+  "nombre": "LUIS",
+  "idEspecialidad": 1,
+  "idCiudad": 1
+}
+
+###
+
+### Actualizar cita médica (SP: sp_ActualizarCitaMedica)
+PUT {{app_02_HostAddress}}/api/medicity/distribuida/1
+Content-Type: application/json
+
+{
+  "idPaciente": 1,
+  "idDoctor": 2,
+  "fechaHora": "2026-09-12T10:00:00"
+}
+
+###
+
+### Vista de diagnósticos (Sitio B + Sitio A)
+GET {{app_02_HostAddress}}/api/medicity/distribuida/diagnosticos
+Accept: application/json
+
+###
+
+### Crear diagnóstico (SP: sp_InsertarDiagnostico)
+POST {{app_02_HostAddress}}/api/medicity/distribuida/sp_diagnostico
+Content-Type: application/json
+
+{
+  "idCita": 1,
+  "nombre": "CONTROL",
+  "descripcion": "PACIENTE ESTABLE",
+  "tratamiento": "CONTINUAR TRATAMIENTO"
+}
+
+###
+
+### Actualizar doctor (SP: sp_ActualizarDoctor)
+PUT {{app_02_HostAddress}}/api/medicity/distribuida/doctor/1
+Content-Type: application/json
+
+{
+  "nombre": "JUAN CARLOS",
+  "idEspecialidad": 1,
+  "idCiudad": 1
+}
+
+###

@@ -1,0 +1,18 @@
+# Solo se versiona el entregable: app_02/, medicity_flutter/, sp_1_ad.sql, sp_2_ad.sql
+# Todo lo demás en esta carpeta (zips, PDFs, scripts de coordinación con el compañero) queda fuera.
+*
+
+!app_02/
+!app_02/**
+!medicity_flutter/
+!medicity_flutter/**
+!sp_1_ad.sql
+!sp_2_ad.sql
+!.gitignore
+
+# Artefactos de build dentro de los proyectos versionados
+app_02/bin/
+app_02/obj/
+app_02/.vs/
+medicity_flutter/build/
+medicity_flutter/.dart_tool/
